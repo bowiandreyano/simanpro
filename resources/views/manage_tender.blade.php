@@ -492,7 +492,175 @@
                                                                     File RFP
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                <a href="{{url('data_file/'.$value->uploadd_rfp )}}">File Download</a>
+                                                                <a href="{{url('data_file/'.$value->uploadd_rfp )}}">File Download RFP</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Tanggal PROK
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->tanggal_proposal_keuangan}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Tanggal PROK
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->tanggal_proposal_keuangan}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    No Prok
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->no_surat_keuangan}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Harga Barang PROK
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->harga_barang_keuangan}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Harga Jasa Prok
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->harga_jasa_keuangan}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Total Prok
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->total_prok}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    File PROK
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <a href="{{url('data_file/'.$value->upload_prok )}}">File Download PROK</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Tanggal BAFO
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->tanggal_bafo}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    No BAFO
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->no_bafo}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Harga Barang BAFO
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->harga_barang_bafo}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Harga Jasa BAFO
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->harga_jasa_bafo}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Total Bafo
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->total_bafo}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    File BAFO
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <a href="{{url('data_file/'.$value->upload_bafo )}}">File Download BAFO</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Nama Vendor
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->nama_vendor}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    No Quotation
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->no_qou}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Tanggal Quotation
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->tgl_quo}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Validate
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->validate}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    File Quotation
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <a href="{{url('data_file/'.$value->upload_quo )}}">File Download QUO</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Harga Barang
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->harga_barang}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Harga Jasa
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->harga_jasa}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Total
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->total_harga}}
                                                                 </div>
                                                             </div>
                                                     </div>

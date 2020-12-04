@@ -244,271 +244,272 @@
             <!-- /#header -->
             <div class="content">
                 <form action="{{ url('tender/') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="row new-form">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">Detail Tender</strong>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <strong class="card-title">Detail Tender</strong>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Tahun</label>
+                                                <input id="cc-payment" name="tahun" type="date" class="form-control" aria-required="true" aria-invalid="false" value="">
                                             </div>
-                                            <div class="card-body">
-                                                <div class="form-group">
-                                                    <label for="cc-payment" class="control-label mb-1">Tahun</label>
-                                                    <input id="cc-payment" name="tahun" type="date" class="form-control" aria-required="true" aria-invalid="false" value="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label mb-1">Status</label>
-                                                        <!-- <input id="cc-name" name="status" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
-                                                    <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
-                                                    <select class="form-control" name="status">
-                                                        <option value="status1">On Progress</option>
-                                                        <option value="status2">Penunjukan</option>
-                                                        <option value="status3">Gagal</option>
-                                                    </select>
-                                                </div> 
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Catatan Status</label>
-                                                    <input id="cc-number" name="catatan_status" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Nama Proyek</label>
-                                                    <input id="cc-number" name="nama_proyek" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Nama Klien</label>
-                                                    <input id="cc-number" name="nama_klien" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Nama Unit</label>
-                                                    <input id="cc-number" name="nama_unit" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Nama UP Klien</label>
-                                                    <input id="cc-number" name="nama_up_klien" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Deskripsi Proyek</label>
-                                                    <input id="cc-number" name="deskripsi_proyek" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Catatan</label>
-                                                    <input id="cc-number" name="catatan" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <!-- <input type="hidden" name="uploadd_rfp" value="test">    "Upload file" -->
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Upload RFP/Email Request</label>
-                                                    <input type="file" id="file-input" name="uploadd_rfp" class="form-control">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
+                                            <div class="form-group">
+                                                <label class="control-label mb-1">Status</label>
+                                                    <!-- <input id="cc-name" name="status" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
+                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
+                                                <select class="form-control" name="status">
+                                                    <option value="status1">On Progress</option>
+                                                    <option value="status2">Penunjukan</option>
+                                                    <option value="status3">Gagal</option>
+                                                </select>
+                                            </div> 
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Catatan Status</label>
+                                                <input id="cc-number" name="catatan_status" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Nama Proyek</label>
+                                                <input id="cc-number" name="nama_proyek" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Nama Klien</label>
+                                                <input id="cc-number" name="nama_klien" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Nama Unit</label>
+                                                <input id="cc-number" name="nama_unit" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Nama UP Klien</label>
+                                                <input id="cc-number" name="nama_up_klien" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Deskripsi Proyek</label>
+                                                <input id="cc-number" name="deskripsi_proyek" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Catatan</label>
+                                                <input id="cc-number" name="catatan" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <!-- <input type="hidden" name="uploadd_rfp" value="test">    "Upload file" -->
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Upload RFP/Email Request</label>
+                                                <input type="file" id="file-input" name="uploadd_rfp" class="form-control">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-1 mt-5"></div>
-                                    <div class="col-md-4 mt-5">
-                                        <a class="btn btn-sm btn-primary text-white" id="addForm">
-                                            Tambah Vendor
-                                        </a>
-                                    </div>
                                 </div>
-                                
+                                <div class="col-md-1 mt-5"></div>
+                                <div class="col-md-4 mt-5">
+                                    <a class="btn btn-sm btn-primary text-white" id="addForm">
+                                        Tambah Vendor
+                                    </a>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">Proposal Penawaran Keuangan</strong>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="form-group">
-                                                    <label for="cc-payment" class="control-label mb-1">Tanggal Surat Proposal Keuangan</label>
-                                                    <input id="cc-payment" name="tanggal_proposal_keuangan" type="date" class="form-control" aria-required="true" aria-invalid="false" value="">
-                                                </div>
-                                                <div class="form-group has-success">
-                                                    <label for="cc-name" class="control-label mb-1">Nomor Surat Keuangan</label>
-                                                    <input id="cc-name" name="no_surat_keuangan" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
-                                                    <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="perhitungan">
-                                                    <label for="cc-number" class="control-label mb-1">Harga Barang</label>
-                                                    <input id="harga_barang_prok" name="harga_barang_keuangan" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="perhitungan">
-                                                    <label for="cc-number" class="control-label mb-1">Harga Jasa</label>
-                                                    <input id="harga_jasa_prok" name="harga_jasa_keuangan" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="perhitungan">
-                                                    <label for="cc-number" class="control-label mb-1">Total Prok</label>
-                                                    <input type="text" name="total_prok" id="total_prok" class="form-control" placeholder="Total Prok" readonly="">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                                                <script type="text/javascript">
-                                                    $(document).ready(function() {
-                                                        $("#harga_jasa_prok, #harga_barang_prok").keyup(function() {
-                                                            var harga  = $("#harga_jasa_prok").val();
-                                                            var jumlah = $("#harga_barang_prok").val();
-        
-                                                            var total = parseInt(harga) + parseInt(jumlah);
-                                                            $("#total_prok").val(total);
-                                                        });
-                                                    });
-                                                </script>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Upload Proposal Keuangan</label>
-                                                    <input type="file" id="file-input" name="upload_prok" class="form-control">
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <strong class="card-title">Proposal Penawaran Keuangan</strong>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">Proposal Penawaran BAFO</strong>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Tanggal Surat Proposal Keuangan</label>
+                                                <input id="cc-payment" name="tanggal_proposal_keuangan" type="date" class="form-control" aria-required="true" aria-invalid="false" value="">
                                             </div>
-                                            <div class="card-body">
-                                                <div class="form-group">
-                                                    <label for="cc-payment" class="control-label mb-1">Tanggal Surat Proposal BAFO</label>
-                                                    <input id="cc-payment" name="tanggal_bafo" type="date" class="form-control" aria-required="true" aria-invalid="false" value="" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-name" class="control-label mb-1">Nomor Surat Proposal Bafo</label>
-                                                    <input
-                                                        id="cc-name"
-                                                        name="no_bafo"
-                                                        type="text"
-                                                        class="form-control cc-name valid"
-                                                        data-val="true"
-                                                        data-val-required="Please enter the name on card"
-                                                        autocomplete="cc-name"
-                                                        aria-required="true"
-                                                        aria-invalid="false"
-                                                        aria-describedby="cc-name"
-                                                    />
-                                                    <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Harga Barang</label>
-                                                    <input
-                                                        id="harga_bafo"
-                                                        name="harga_barang_bafo"
-                                                        type="text"
-                                                        class="form-control cc-number identified visa money"
-                                                        value=""
-                                                        data-val="true"
-                                                        data-val-required="Please enter the card number"
-                                                        data-val-cc-number="Please enter a valid card number"
-                                                    />
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Harga Jasa</label>
-                                                    <input
-                                                        id="jasa_bafo"
-                                                        name="harga_jasa_bafo"
-                                                        type="text"
-                                                        class="form-control cc-number identified visa money"
-                                                        value=""
-                                                        data-val="true"
-                                                        data-val-required="Please enter the card number"
-                                                        data-val-cc-number="Please enter a valid card number"
-                                                    />
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Total Bafo</label>
-                                                    <input type="text" name="total_bafo" id="total_bafo" class="form-control money" placeholder="Total BAFO" readonly="" />
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                                <script type="text/javascript">
-                                                    $(document).ready(function () {
-                                                        $(".money").mask("000.000.000.000.000", { reverse: true });
-                                                        $("#harga_bafo, #jasa_bafo").keyup(function () {
-                                                            var harga = $("#harga_bafo").val();
-                                                            var jumlah = $("#jasa_bafo").val();
-                                                
-                                                            var total = parseInt(harga) + parseInt(jumlah);
-                                                            $("#total_bafo").val(total + ".000");
-                                                        });
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Nomor Surat Keuangan</label>
+                                                <input id="cc-name" name="no_surat_keuangan" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
+                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="perhitungan">
+                                                <label for="cc-number" class="control-label mb-1">Harga Barang</label>
+                                                <input id="harga_barang_prok" name="harga_barang_keuangan" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="perhitungan">
+                                                <label for="cc-number" class="control-label mb-1">Harga Jasa</label>
+                                                <input id="harga_jasa_prok" name="harga_jasa_keuangan" type="text" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="perhitungan">
+                                                <label for="cc-number" class="control-label mb-1">Total Prok</label>
+                                                <input type="text" name="total_prok" id="total_prok" class="form-control" placeholder="Total Prok" readonly="">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                                            <script type="text/javascript">
+                                                $(document).ready(function() {
+                                                    $("#harga_jasa_prok, #harga_barang_prok").keyup(function() {
+                                                        var harga  = $("#harga_jasa_prok").val();
+                                                        var jumlah = $("#harga_barang_prok").val();
+    
+                                                        var total = parseInt(harga) + parseInt(jumlah);
+                                                        $("#total_prok").val(total);
                                                     });
-                                                </script>
-                                                <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Upload Proposal BAFO</label>
-                                                    <input type="file" id="file-input" name="upload_bafo" class="form-control" />
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>                                        
+                                                });
+                                            </script>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Upload Proposal Keuangan</label>
+                                                <input type="file" id="file-input" name="upload_prok" class="form-control">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                            </div>      
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong class="card-title">Vendor</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama Vendor</label>
-                                            <input id="cc-payment" name="nama_vendor" type="text" class="form-control" aria-required="true" aria-invalid="false" value="">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <strong class="card-title">Proposal Penawaran BAFO</strong>
                                         </div>
-                                        <div class="form-group has-success">
-                                            <label for="cc-name" class="control-label mb-1">No Quotation</label>
-                                            <input id="cc-name" name="no_qou" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
-                                            <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cc-number" class="control-label mb-1">Tgl Quotation</label>
-                                            <input id="cc-number" name="tgl_quo" type="date" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cc-number" class="control-label mb-1">Validate</label>
-                                            <input id="cc-number" name="validate" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cc-number" class="control-label mb-1">Upload Quotation</label>
-                                            <input type="file" id="file-input" name="upload_quo" class="form-control-file">
-                                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cc-number" class="control-label mb-1">Harga Barang</label>
-                                            <input id="harga_barang" name="harga_barang" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cc-number" class="control-label mb-1">Harga Jasa</label>
-                                            <input id="harga_jasa" name="harga_jasa" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
-                                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cc-number" class="control-label mb-1">Total Harga</label>
-                                            <input type="text" name="total_harga" id="total_harga" class="form-control" placeholder="Total" readonly="">
-                                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Tanggal Surat Proposal BAFO</label>
+                                                <input id="cc-payment" name="tanggal_bafo" type="date" class="form-control" aria-required="true" aria-invalid="false" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-name" class="control-label mb-1">Nomor Surat Proposal Bafo</label>
+                                                <input
+                                                    id="cc-name"
+                                                    name="no_bafo"
+                                                    type="text"
+                                                    class="form-control cc-name valid"
+                                                    data-val="true"
+                                                    data-val-required="Please enter the name on card"
+                                                    autocomplete="cc-name"
+                                                    aria-required="true"
+                                                    aria-invalid="false"
+                                                    aria-describedby="cc-name"
+                                                />
+                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Harga Barang</label>
+                                                <input
+                                                    id="harga_bafo"
+                                                    name="harga_barang_bafo"
+                                                    type="text"
+                                                    class="form-control cc-number identified visa money"
+                                                    value=""
+                                                    data-val="true"
+                                                    data-val-required="Please enter the card number"
+                                                    data-val-cc-number="Please enter a valid card number"
+                                                />
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Harga Jasa</label>
+                                                <input
+                                                    id="jasa_bafo"
+                                                    name="harga_jasa_bafo"
+                                                    type="text"
+                                                    class="form-control cc-number identified visa money"
+                                                    value=""
+                                                    data-val="true"
+                                                    data-val-required="Please enter the card number"
+                                                    data-val-cc-number="Please enter a valid card number"
+                                                />
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Total Bafo</label>
+                                                <input type="text" name="total_bafo" id="total_bafo" class="form-control money" placeholder="Total BAFO" readonly="" />
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <script type="text/javascript">
+                                                $(document).ready(function () {
+                                                    $(".money").mask("000.000.000.000.000", { reverse: true });
+                                                    $("#harga_bafo, #jasa_bafo").keyup(function () {
+                                                        var harga = $("#harga_bafo").val();
+                                                        var jumlah = $("#jasa_bafo").val();
+                                            
+                                                        var total = parseInt(harga) + parseInt(jumlah);
+                                                        $("#total_bafo").val(total + ".000");
+                                                    });
+                                                });
+                                            </script>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Upload Proposal BAFO</label>
+                                                <input type="file" id="file-input" name="upload_bafo" class="form-control" />
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>                                        
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div id="newForm"></div> --}}
+                            
+                        </div>      
+                        {{-- <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Vendor</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="cc-payment" class="control-label mb-1">Nama Vendor</label>
+                                        <input id="cc-payment" name="nama_vendor'+count+'" type="text" class="form-control" aria-required="true" aria-invalid="false" value="">
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label for="cc-name" class="control-label mb-1">No Quotation</label>
+                                        <input id="cc-name" name="no_qou'+count+'" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
+                                        <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-number" class="control-label mb-1">Tgl Quotation</label>
+                                        <input id="cc-number" name="tgl_quo'+count+'" type="date" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                        <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-number" class="control-label mb-1">Validate</label>
+                                        <input id="cc-number" name="validate'+count+'" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                        <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-number" class="control-label mb-1">Upload Quotation</label>
+                                        <input type="file" id="file-input" name="upload_quo'+count+'" class="form-control-file">
+                                        <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-number" class="control-label mb-1">Harga Barang</label>
+                                        <input id="harga_barang" name="harga_barang'+count+'" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                        <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-number" class="control-label mb-1">Harga Jasa</label>
+                                        <input id="harga_jasa" name="harga_jasa'+count+'" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                        <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-number" class="control-label mb-1">Total Harga</label>
+                                        <input type="text" name="total_harga'+count+'" id="total_harga" class="form-control" placeholder="Total" readonly="">
+                                        <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
                     </div>
                     <div class="row">
                         <div class="col-md-6"></div>
+                        <input type="hidden" name="countVendor" class="count-vendor">
                         <div class="col-md-6">
                             <button id="payment-button" type="submit" class="btn btn-primary btn-block">
-                                &nbsp;
+                                &nbsp;                                
                                 <span id="payment-button-amount">SAVE</span>
                                 <span id="payment-button-sending" style="display:none;">Sending…</span>
                             </button> 
@@ -537,9 +538,10 @@
             var count = 0;
             $("#addForm").click(function () {
                 var html = '';
-                // count++;
-                html += '<div class="col-md-4"><div class="card"><div class="card-header"> <strong class="card-title">Vendor</strong></div><div class="card-body"><div class="form-group"> <label for="cc-payment" class="control-label mb-1">Nama Vendor</label> <input id="cc-payment" name="nama_vendor" type="text" class="form-control" aria-required="true" aria-invalid="false" value=""></div><div class="form-group has-success"> <label for="cc-name" class="control-label mb-1">No Quotation</label> <input id="cc-name" name="no_qou" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name"> <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Tgl Quotation</label> <input id="cc-number" name="tgl_quo" type="date" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Validate</label> <input id="cc-number" name="validate" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Upload Quotation</label> <input type="file" id="file-input" name="upload_quo" class="form-control-file"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Harga Barang</label> <input id="harga_barang" name="harga_barang" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Harga Jasa</label> <input id="harga_jasa" name="harga_jasa" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Total Harga</label> <input type="text" name="total_harga" id="total_harga" class="form-control" placeholder="Total" readonly=""> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div></div></div></div>';
+                count++;
+                html += '<div class="col-md-4"><div class="card"><div class="card-header"> <strong class="card-title">Vendor</strong></div><div class="card-body"><div class="form-group"> <label for="cc-payment" class="control-label mb-1">Nama Vendor</label> <input id="cc-payment" name="nama_vendor'+count+'" type="text" class="form-control" aria-required="true" aria-invalid="false" value=""></div><div class="form-group has-success"> <label for="cc-name" class="control-label mb-1">No Quotation</label> <input id="cc-name" name="no_qou'+count+'" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name"> <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Tgl Quotation</label> <input id="cc-number" name="tgl_quo'+count+'" type="date" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Validate</label> <input id="cc-number" name="validate'+count+'" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Upload Quotation</label> <input type="file" id="file-input" name="upload_quo'+count+'" class="form-control-file"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Harga Barang</label> <input id="harga_barang" name="harga_barang'+count+'" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Harga Jasa</label> <input id="harga_jasa" name="harga_jasa'+count+'" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div><div class="form-group"> <label for="cc-number" class="control-label mb-1">Total Harga</label> <input type="text" name="total_harga'+count+'" id="total_harga" class="form-control" placeholder="Total" readonly=""> <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span></div></div></div></div>';
                 $('.new-form').append(html);
+                $('.count-vendor').val(count);
             });
         </script>
 

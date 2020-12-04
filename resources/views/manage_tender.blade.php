@@ -403,20 +403,96 @@
                                                         <div class="modal-body">
                                                             <div class="form-group row">
                                                                 <div class="col-md-4">
-                                                                    Nama Vendor:
+                                                                    Tahun:
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    {{$value->nama_vendor}}
+                                                                    {{$value->tahun}}
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-md-4">
-                                                                    File Bafo:
+                                                                    Status:
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                <a href="{{url('data_file/'.$value->uploadd_rfp )}}">
-                                                            File
-                                                        </a>
+                                                                @if( $value->status == 'status1')
+                                                                <span class="badge bg-info" style="padding: 0.45em; margin-top: 4px;">On Progress</span>
+                                                                @elseif( $value->status == 'status2')
+                                                                <span class="badge bg-success" style="padding: 0.45em; margin-top: 4px;">Penunjukan</span>
+                                                                @else
+                                                                <span class="badge bg-danger" style="padding: 0.45em; margin-top: 4px;">Gagal</span> 
+                                                                @endif
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    catatan_status:
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->catatan_status}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Nama Proyek:
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->nama_proyek}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Nama Klien:
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->nama_klien}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Nama Unit:
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->nama_unit}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Nama UP Klien:
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->nama_up_klien}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Deskripsi Proyek:
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->deskripsi_proyek}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Deskripsi Proyek:
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->deskripsi_proyek}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    Catatan
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    {{$value->catatan}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    File RFP
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <a href="{{url('data_file/'.$value->uploadd_rfp )}}">File Download</a>
                                                                 </div>
                                                             </div>
                                                     </div>

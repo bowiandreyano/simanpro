@@ -39,8 +39,7 @@ class DetailTender extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-
+    {        
         // $this->validate($request, [
         //     'tahun' => 'required',
         //     'status' => 'required',
@@ -73,6 +72,7 @@ class DetailTender extends Controller
         //     'harga_jasa' => 'required',
         //     'total_harga' => 'required'
         // ]);
+
         $tujuan_upload = 'data_file';
         // menyimpan data file yang diupload ke variabel $file 1
         $file = $request->file('uploadd_rfp');
@@ -105,14 +105,9 @@ class DetailTender extends Controller
             $nama_file_file_file = "null";
         }
         
-        $filefilefilefile = $request->file('upload_quo');
-
-        $nama_file_file_file_file = time()."_".$filefilefilefile->getClientOriginalName();
-
                   // isi dengan nama folder tempat kemana file diupload
         $file->move($tujuan_upload,$nama_file);
         $filefile->move($tujuan_upload,$nama_file_file);
-        $filefilefilefile->move($tujuan_upload,$nama_file_file_file_file);
 
         MODetailTender::create([
             'tahun' => $request->tahun,
@@ -141,7 +136,7 @@ class DetailTender extends Controller
             'no_qou' => $request->no_qou,
             'tgl_quo' => $request->tgl_quo,
             'validate' => $request->validate,
-            'upload_quo' => $nama_file_file_file_file,
+            'upload_quo' => 'tbl_supplier_cek',
             'harga_barang' => $request->harga_barang,
             'harga_jasa' => $request->harga_jasa,
             'total_harga' => $request->total_harga,
@@ -151,19 +146,29 @@ class DetailTender extends Controller
         ->limit(1)
         ->get();
 
-        Vendor::create([
-            'id_tender' => $getIDTender[0]->id_tender,
-            'nama_supplier' => $request->nama_vendor,
-            'no_quotation' => $request->no_qou,
-            'tgl_quotation' => $request->tgl_quo,
-            'validate' => $request->validate,
-            'upload_quotation' => $nama_file_file_file_file,
-            'harga_barang' => $request->harga_barang,
-            'harga_jasa' => $request->harga_jasa,
-            'total_harga' => $request->total_harga,
-        ]);
+        for ($i=1; $i <= $request->countVendor; $i++) {
+            // echo $request['nama_vendor'.(string)$i];
+            $filefilefilefile = $request->file('upload_quo'.(string)$i);
+            $nama_file_file_file_file = time()."_".$filefilefilefile->getClientOriginalName();
+            $filefilefilefile->move($tujuan_upload, $nama_file_file_file_file);
 
-    return redirect()->back();
+            Vendor::create([
+                'id_tender' => $getIDTender[0]->id_tender,
+                'nama_supplier' => $request['nama_vendor'.(string)$i],
+                'no_quotation' => $request['no_qou'.(string)$i],
+                'tgl_quotation' => $request['tgl_quo'.(string)$i],
+                'validate' => $request['validate'.(string)$i],
+                'upload_quotation' => $nama_file_file_file_file,
+                'harga_barang' => $request['harga_barang'.(string)$i],
+                'harga_jasa' => $request['harga_jasa'.(string)$i],
+                'total_harga' => $request['total_harga'.(string)$i],
+            ]);
+        }
+        // $request['harga_jasa2'];
+        // return $request;
+
+
+        return redirect()->back();
     }
 
     /**
